@@ -2,8 +2,8 @@
 **TRADE - HIGH - TECH**
 
 >Technologies : 
->>**Synfony**
->>**jQery**
+>>**Synfony** ; 
+>> **jQery**
 
 **CREATE** by :
 >-- Manon Noblet -- 
