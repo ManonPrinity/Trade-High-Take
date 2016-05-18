@@ -1,0 +1,4 @@
+services:
+    account.token_authenticator:
+        class: Ecommerce\AccountBundle\Security\TokenAuthenticator
+        arguments: ["@doctrine.orm.entity_manager"]

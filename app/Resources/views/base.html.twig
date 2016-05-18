@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8" />
+    <title>{% block title %}Acceuil - {% endblock %} - THT</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}"/>
+
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+    {% block menu_auth %}
+{% if(session) %}
+    <h1>Bienvenu {{ session }} </h1>
+{% endif %}
+    {{ include('layout/menu.html.twig')}}
+
+    {% endblock %}
+
+    {% endblock %}
+
+
+    {% block footer %}{% endblock %}
+
+
+    {% block javascripts %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/slide.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/presentation_slide.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
+    {% endblock %}
+</body>
+</html>
