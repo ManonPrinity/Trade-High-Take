@@ -6,8 +6,8 @@
 >>**jQery**
 
 **CREATE** by :
->Noblet Manon : 
->Lysa Fichot :
->Samuel Vilard :
->Terry Fourgeux :
+>-- Manon Noblet -- 
+>Lysa Fichot --
+>Samuel Vilard --
+>Terry Fourgeux --
  
