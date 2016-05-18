@@ -1,6 +1,6 @@
 # Trade-High-Take
 **TRADE - HIGH - TECH**
-
+E-commerce project to sell high-tech products.
 >Technologies : 
 >>**Synfony** ; 
 >> **jQery**
