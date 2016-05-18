@@ -3,7 +3,7 @@
 >E-commerce project to sell high-tech products.
 >>Technologies : 
 >>>- **Symfony** 
->>>>- **jQery**
+>>>- **jQery**
 
 **CREATE** by :
 >-- Manon Noblet -- 
