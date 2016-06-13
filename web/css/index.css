@@ -1,47 +1,64 @@
 html { height: 100%;}
-body { height: 100%; margin: 0px;}
+body {display: flex; flex-direction: column; align-items: center; min-height: 100%; height: 100%; margin: 0px; background-image: url('../images/black_pattern.png');}
 
-#bg_canvas { display: block; position: fixed; z-index: -1; width: 100%; height: 100%; background-color: #111}
+#main_div {display: flex; flex-direction: column; width: 70%; height: 100%; min-height: 100%;}
+/*#bg_canvas { display: block; position: fixed; z-index: -1; width: 100%; height: 100%; background-color: #17181C}*/
 
-header { height: 85px; background: #e0e0e0 url(../images/header.png); margin-bottom: 3%; }
-	header img { height: 100%; }
+header { display:flex; justify-content: space-between; min-height:10%;height: 10%; background:#EFEFF1;  }/*url(../images/header.png);*/
+	header img { width: 15%;}
+	header h1 {width: 40%; float: left;}
 		#auth {
 			float: right;
 		}
 
-#main_div { max-width: 960px; margin: auto; display: block; }
-
-#button_div { height: 70px; background-color: #e0e0e0; margin-top: 3%; }
+#search_login { display: flex;height: 15%; min-height:15%; background-color:#009085;}
+#contents {background-color: #EFEFF1; display: flex; flex-direction:column; height: 100%; min-height: 100%;}
+#menu_category_slide {
+	display: flex;
+	padding-top: 2%;
+	justify-content: space-around;
+	height: 50%;
+	min-height: 50%;
+	width: 100%;
+}
+#menu_category {
+ 	display: flex;  background-color: #FCFCFC; width: 20%;border-radius: 8px;
+}
+#slider {display: flex; width: 65%; border-radius: 8px;}
+#slider .slide {
+	display: flex; width: 100%;border-radius: 8px;
+}
+#button_div { height: 70px; background-color:#EFEFF1; margin-top: 3%; }
 	#button_div .categories {}
 	#button_div .promo {}
 	#button_div .other {}
 
-footer { height: 150px; background-color: #e0e0e0; margin-top: 3%; }
+footer { height: 150px; background-color:#EFEFF1; margin-top: 3%; }
 
 /* ---- slider ---- */
 
-#slider { display: block; position: relative; margin: auto; overflow: hidden; cursor: pointer;}
-	#slides { display: block; width: 960px; height: 300px; border: 2px solid #333; border-bottom: 1px solid #333; overflow: hidden;}
-	#slides:img { display: block; position: absolute; z-index: -1; width: 960px; height: 300px; transition: all 0.5s;}
+/*#slider { display:flex; position: relative;  overflow: hidden; cursor: pointer;}
+	#slides { display: block; width: 402px; height: 300px; border: 2px solid #333; border-bottom: 1px solid #333; overflow: hidden;}
+	#slides:img { display: block; position: absolute; z-index: -1; width: 402px; height: 300px; transition: all 0.5s;}
 		.arrow { display: block; position: absolute; z-index: 999; width: 25px; height: 25px; padding: 5px; background: #000; opacity: 0.7; cursor: pointer; transition: all 0.2s;}
 			#leftArrow { top: 43%; left: 0px;}
 			#leftArrow:hover { top: 44%; width: 27px; height: 27px;}
 			#rightArrow { top: 43%; right: 0px;}
 			#rightArrow:hover { top: 44%; width: 27px; height: 27px;}
-	#bullets { display: block; position: absolute; z-index: 999; top: 560px; width: 960px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
+	#bullets { display: block; position: absolute; z-index: 999; top: 560px; width: 402px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
 	.bullet { display: inline-block; vertical-align: top; width: 20px; height: 20px; border-radius: 50%; margin: 11px 5px; background: #eee; cursor: pointer;}
 		.activeBullet { background: #f33;}
-
+*/
 /* ---- slider de presentation ---- */
 
-#pst_slide { display: block; position: relative; margin: auto; height: 150px; overflow: hidden; cursor: pointer;}
-	#pst_slides { display: block; width: 960px;  margin-top: 3%; height: 150px; border: 2px solid #333; border-bottom: 1px solid #333; overflow: hidden;}
-	#pst_slides:img { display: block; position: absolute; z-index: -1; width: 960px; height: 150x; transition: all 0.5s;}
+/*#pst_slide { display: block; position: relative; margin: auto; height: 150px; overflow: hidden; cursor: pointer;}
+	#pst_slides { display: block; width: 402px;  margin-top: 3%; height: 150px; border: 2px solid #333; border-bottom: 1px solid #333; overflow: hidden;}
+	#pst_slides:img { display: block; position: absolute; z-index: -1; width: 402px; height: 150x; transition: all 0.5s;}
 		.fleches { display: block; position: absolute; z-index: 999; width: 25px; height: 25px; padding: 5px; background: #000; opacity: 0.7; cursor: pointer; transition: all 0.2s;}
 			#gaucheArrow { top: 43%; left: 0px;}
 			#gaucheArrow:hover { top: 44%; width: 27px; height: 27px;}
 			#droiteArrow { top: 43%; right: 0px;}
 			#droiteArrow:hover { top: 44%; width: 27px; height: 27px;}
-	#points { display: block; position: absolute; z-index: 999; top: 560px; width: 960px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
+	#points { display: block; position: absolute; z-index: 999; top: 560px; width: 402px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
 	.point { display: inline-block; vertical-align: top; width: 20px; height: 20px; border-radius: 50%; margin: 11px 5px; background: #eee; cursor: pointer;}
-		.BulletActivated { background: #f33;}
+		.BulletActivated { background: #f33;}*/

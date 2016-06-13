@@ -1,0 +1,21 @@
+{% extends "AdminBundle:Default:index.html.twig" %}
+     {% block board %}
+
+<div class='contents'>
+
+{{ form_start(form, {'attr': {'class': 'form-add-category'}}) }}
+
+  {{ form_widget(form.name) }}
+  {{ form_widget(form.medias.vars.prototype.files) }}
+  {{ form_widget(form.medias) }}
+    <button type="submit">Ajouter</button>
+    {{ form_end(form) }}
+
+    <div class='categories'>
+  {% for category in categories %}
+   {% include("AdminBundle:Category:category.html.twig" ) %}
+  {% endfor %}
+
+</div>
+</div>
+{% endblock %}

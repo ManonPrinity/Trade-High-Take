@@ -3,8 +3,8 @@
 namespace Ecommerce\AccountBundle\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
-use Ecommerce\AccountBundle\Form\UserType;
-use Ecommerce\AccountBundle\Entity\User;
+use Ecommerce\AccountBundle\Form\RegisterType;
+use Ecommerce\AccountBundle\Entity\Accounts;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -22,7 +22,7 @@ class AuthController extends Controller
 			$username = $request->get('username');
 			$password = $request->get('password');
 
-			$repository = $this->getDoctrine()->getRepository('AccountBundle:User');
+			$repository = $this->getDoctrine()->getRepository('AccountBundle:Accounts');
 			$user = $repository->findOneByUsername($username);
 
 			if($user) {
@@ -30,7 +30,7 @@ class AuthController extends Controller
 				$encoded = $encoder->encodePassword($user, $password);
 			}
 			if($user && $encoded == $user->getPassword()) {
-				$session->set('user', $username);
+				$session->set('user', $user);
 				return $this->redirectToRoute('ecommerce_homepage');
 			} else {
 				$error = 'Identifiants incorrects';
@@ -47,8 +47,8 @@ class AuthController extends Controller
 	public function registrationAction(Request $request)
 	{
 
-		$user = new User();
-		$form   = $this->get('form.factory')->create(UserType::class, $user);
+		$user = new Accounts();
+		$form   = $this->createForm(RegisterType::class, $user);
 
 		$form->handleRequest($request);
 
@@ -61,6 +61,8 @@ class AuthController extends Controller
 			$user->setPassword($encoded);
 			$user->setUsername($form['username']->getData());
 			$user->setEmail($form['email']->getData());
+			$user->setRoles('ROLE_USER');
+
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($user);
 			$em->flush();

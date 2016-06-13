@@ -1,0 +1,83 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil {% endblock %}
+
+{% block head %} {{ parent() }} {% endblock %}
+
+
+{% block body %}
+
+
+<div id="main_div">
+	<header>
+		<img src="{{ asset('images/logo.png') }}"/>
+
+	</header>
+	<div id='search_login'>
+		{% block menu_auth %} {{ parent() }} {% endblock %}
+	</div>
+	<div id='contents'>
+		<section id="menu_category_slide">
+			<div id='menu_category'>
+
+			</div>
+
+			<div id="slider">
+									<img class="slide" src="{{ asset('images/slide_brute/hightech.jpg') }}"/>
+
+				<!-- <a href="#">
+					<div id="slides">
+						<img class="slide" src="{{ asset('images/slide_brute/hightech.jpg') }}"/>
+						<img class="slide" src="{{ asset('images/slide_brute/slide1.jpeg') }}"/>
+						<img class="slide" src="{{ asset('images/slide_brute/slide2.JPG') }}" />
+						<img class="slide" src="{{ asset('images/slide_brute/slide3.jpg') }}" />
+						<img class="slide" src="{{ asset('images/slide_brute/slide4.jpg') }}"/>
+					</div>
+				</a>
+				<img id="leftArrow" class="arrow" src="{{ asset('images/arrowLeft.svg') }}"/>
+				<img id="rightArrow" class="arrow" src="{{ asset('images/arrowRight.svg') }}"/>
+				<div id="bullets"/> -->
+			</div>
+		</section>
+
+		<section id="button_div">
+			<div class="categories">
+				<li><a href="{{ path('home_categories') }}">Categories</a></li>
+
+			</div>
+			<div class="promo">
+
+			</div>
+			<div class="other">
+
+			</div>
+		</section>
+
+		<section id="pst_div">
+			<!-- <div id="pst_slide">
+				<a href="#">
+					<div id="pst_slides">
+						<img class="pst_slide" src="{{ asset('images/slide_brute/elec.jpg') }}"/>
+						<img class="pst_slide" src="{{ asset('images/slide_brute/slide1.jpeg') }}"/>
+						<img class="pst_slide" src="{{ asset('images/slide_brute/slide2.JPG') }}" />
+						<img class="pst_slide" src="{{ asset('images/slide_brute/slide3.jpg') }}" />
+						<img class="pst_slide" src="{{ asset('images/slide_brute/slide4.jpg') }}"/>
+					</div>
+				</a>
+				<img id="gaucheArrow" class="fleches" src="{{ asset('images/arrowLeft.svg') }}"/>
+				<img id="droiteArrow" class="fleches" src="{{ asset('images/arrowRight.svg') }}"/>
+				<div id="points"/> -->
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+{% endblock %}

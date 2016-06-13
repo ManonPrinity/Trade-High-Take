@@ -1,19 +1,14 @@
-# app/config/security.yml
 security:
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
     providers:
         in_memory:
             memory:
                 users:
-                    user:
-                        password: pass
-                        roles: 'ROLE_USER'
                     admin:
-                        password: $2y$12$c0hUWQSH7DfckotMPyFk9euTMxabGlXHm.hOQss5Id0U5qxrdn0w
+                        password: THT
                         roles: 'ROLE_ADMIN'
     encoders:
-        Ecommerce\AccountBundle\Entity\User:
+        Symfony\Component\Security\Core\User\User: plaintext
+        Ecommerce\AccountBundle\Entity\Accounts:
             algorithm: sha512
             iterations: 9616
             encode_as_base64: true
@@ -25,33 +20,13 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        login:
-            pattern: ^/login
-            security: false
-
-        secured_area:
-            pattern:    ^/
+        default:
             anonymous: ~
-
-        main:
-            pattern: ^/
-            form_login:
-                login_path: login
-                check_path: login
-            anonymous: true
-
-            logout:
-                path: /logout
-                target: /
-            guard:
-                authenticators:
-                    - account.token_authenticator
-            remember_me:
-                key: "%secret%"
-                lifetime: 2232000
-
+            http_basic: ~
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
     access_control:
-        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: /, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/registration, roles: IS_AUTHENTICATED_ANONYMOUSLY }
